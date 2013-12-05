@@ -19,5 +19,10 @@
     "autoload": {
         "psr-0": { "Hautelook\\TemplatedUriBundle": "" }
     },
-    "target-dir": "Hautelook/TemplatedUriBundle"
+    "target-dir": "Hautelook/TemplatedUriBundle",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
 }
