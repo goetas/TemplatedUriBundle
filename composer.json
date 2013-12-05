@@ -13,14 +13,13 @@
     ],
     "require": {
         "php": ">=5.3.0",
-        "symfony/routing": ">=2.1.0, <= 2.2.99",
-        "symfony/http-kernel": ">=2.1.0, <= 2.2.99",
-        "symfony/framework-bundle": ">=2.1.0, <= 2.2.99"
+        "symfony/routing": "~2.1",
+        "symfony/http-kernel": "~2.1",
+        "symfony/framework-bundle": "~2.1"
     },
-    "require-dev": {},
     "autoload": {
         "psr-0": { "Hautelook\\TemplatedUriBundle": "" }
     },
     "target-dir": "Hautelook/TemplatedUriBundle",
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
