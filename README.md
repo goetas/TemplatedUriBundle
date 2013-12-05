@@ -8,13 +8,14 @@ and incomplete. However, it does what we need it to do. Contributions are welcom
 
 ## Installation
 
-Simply run the following command (assuming you have installed composer.phar or composer binary), or add to your `composer.json` and run composer install:
+Run the following command (assuming you have installed composer.phar or composer binary),
+or add to your `composer.json` and run `composer install`:
 
 ```bash
 $ composer require hautelook/templated-uri-bundle
 ```
 
-Now add the Bundle to your Kernel:
+Now add the bundle to your Kernel:
 
 ```php
 <?php
@@ -32,8 +33,8 @@ public function registerBundles()
 
 ## Usage
 
-The bundle exposes a router service (`hautelook.router.template`) that will generate RFC-6570 compliant URLs. Here is a sample
-on how you could use it.
+The bundle exposes a router service (`hautelook.router.template`) that will generate RFC-6570 compliant URLs.
+Here is a sample on how you could use it:
 
 ```php
 $templateLink = $this->get('hautelook.router.template')->generate('hautelook_demo_route',
@@ -52,4 +53,3 @@ This will produce a link similar to:
 ```
 
 [RFC-6570]: https://tools.ietf.org/html/rfc6570
-
