@@ -5,6 +5,7 @@ Symfony2 Bundle for the [https://github.com/hautelook/TemplatedUriRouter](https:
 library.
 
 [![Build Status](https://secure.travis-ci.org/hautelook/TemplatedUriBundle.png?branch=master)](https://travis-ci.org/hautelook/TemplatedUriBundle)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/cf31d6be-a1b8-41b5-a718-9f35660c321b/mini.png)](https://insight.sensiolabs.com/projects/cf31d6be-a1b8-41b5-a718-9f35660c321b)
 
 ## Installation
 
