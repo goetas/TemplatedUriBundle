@@ -13,7 +13,7 @@ Run the following command (assuming you have installed composer.phar or composer
 or add to your `composer.json` and run `composer install`:
 
 ```bash
-$ composer require "hautelook/templated-uri-bundle ~1.0"
+$ composer require "hautelook/templated-uri-bundle ~2.0"
 ```
 
 Now add the bundle to your Kernel:
