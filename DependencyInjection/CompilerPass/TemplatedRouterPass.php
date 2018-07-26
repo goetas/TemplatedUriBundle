@@ -10,17 +10,17 @@ class TemplatedRouterPass implements CompilerPassInterface
     public function process(ContainerBuilder $container)
     {
         $router = $container->findDefinition('router.default');
-        $argument = $router->getArgument(2);
+        $resourceOptions = $router->getArgument(2);
 
         $templatedRouter = $container->findDefinition('hautelook.router.template');
-        $templatedArgument = $templatedRouter->getArgument(2);
-        if (isset($argument['resource_type'])) {
-            $templatedArgument['resource_type'] = $argument['resource_type'];
+        $templatedResourceOptions = $templatedRouter->getArgument(2);
+        if (isset($resourceOptions['resource_type'])) {
+            $templatedResourceOptions['resource_type'] = $resourceOptions['resource_type'];
         }
-        if (isset($argument['strict_requirements'])) {
-            $templatedArgument['strict_requirements'] = $argument['strict_requirements'];
+        if (isset($resourceOptions['strict_requirements'])) {
+            $templatedResourceOptions['strict_requirements'] = $resourceOptions['strict_requirements'];
         }
-        $templatedRouter->replaceArgument(2, $templatedArgument);
+        $templatedRouter->replaceArgument(2, $templatedResourceOptions);
 
         $ref = new \ReflectionClass($templatedRouter->getClass());
         $cargs = $ref->getConstructor()->getParameters();
