@@ -21,6 +21,13 @@ class TemplatedRouterPass implements CompilerPassInterface
             $templatedArgument['strict_requirements'] = $argument['strict_requirements'];
         }
         $templatedRouter->replaceArgument(2, $templatedArgument);
+
+        $ref = new \ReflectionClass($templatedRouter->getClass());
+        $cargs = $ref->getConstructor()->getParameters();
+        if ($cargs[4]->getName() !== 'parameters') { // Symfony < 4
+            $args = $templatedRouter->getArguments();
+            unset($args[4]);
+            $templatedRouter->setArguments(array_values($args));
+        }
     }
 }
-

@@ -28,6 +28,7 @@
                 <argument key="matcher_cache_class">%kernel.name%%kernel.environment%RFC6570UrlMatcher</argument>
             </argument>
             <argument type="service" id="router.request_context" on-invalid="ignore" />
+            <argument type="service" id="parameter_bag" on-invalid="ignore" />
             <argument type="service" id="logger" on-invalid="ignore" />
         </service>
     </services>
