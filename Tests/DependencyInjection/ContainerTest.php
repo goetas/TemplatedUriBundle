@@ -39,6 +39,8 @@ class ContainerTest extends TestCase
 
         $container->getDefinition('hautelook.router.template')->setPublic(true);
 
+        $container->compile();
+
         return $container;
     }
 
