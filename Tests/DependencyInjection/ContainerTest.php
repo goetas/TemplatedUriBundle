@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: goetas
- * Date: 26.07.18
- * Time: 13:11
- */
 
 namespace Hautelook\TemplatedUriBundle\Tests\DependencyInjection;
 
@@ -44,6 +38,8 @@ class ContainerTest extends TestCase
         $extension->load($configs, $container);
 
         $container->getDefinition('hautelook.router.template')->setPublic(true);
+
+        $container->compile();
 
         return $container;
     }

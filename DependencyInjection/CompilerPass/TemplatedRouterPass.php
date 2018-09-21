@@ -23,11 +23,11 @@ class TemplatedRouterPass implements CompilerPassInterface
         $templatedRouter->replaceArgument(2, $templatedResourceOptions);
 
         $ref = new \ReflectionClass($templatedRouter->getClass());
-        $cargs = $ref->getConstructor()->getParameters();
-        if ($cargs[4]->getName() !== 'parameters') { // Symfony < 4
+        $cArgs = $ref->getConstructor()->getParameters();
+        if (count($cArgs) < 5) { // Symfony < 4
             $args = $templatedRouter->getArguments();
-            unset($args[4]);
-            $templatedRouter->setArguments(array_values($args));
+            $args = array_slice($args, 0, 4);
+            $templatedRouter->setArguments($args);
         }
     }
 }
