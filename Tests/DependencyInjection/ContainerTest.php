@@ -1,10 +1,4 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: goetas
- * Date: 26.07.18
- * Time: 13:11
- */
 
 namespace Hautelook\TemplatedUriBundle\Tests\DependencyInjection;
 
