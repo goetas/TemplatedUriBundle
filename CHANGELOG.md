@@ -1,7 +1,11 @@
 # Change Log
 
-## [2.1.0](https://github.com/hautelook/TemplatedUriBundle/tree/2.1.0) (2018-09-21)
+## [3.0.0](https://github.com/hautelook/TemplatedUriBundle/tree/3.0.0) (2018-11-30)
+**Merged pull requests:**
 
+- \[RFC\] v 3.0 [\#23](https://github.com/hautelook/TemplatedUriBundle/pull/23) ([goetas](https://github.com/goetas))
+
+## [2.1.0](https://github.com/hautelook/TemplatedUriBundle/tree/2.1.0) (2018-09-21)
 **Implemented enhancements:**
 
 - Symfony 4 support and more [\#21](https://github.com/hautelook/TemplatedUriBundle/pull/21) ([goetas](https://github.com/goetas))
