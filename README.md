@@ -53,5 +53,5 @@ $templateLink = $container->get('hautelook.router.template')->generate('hauteloo
 This will produce a link similar to:
 
 ```
-/demo?{&page}{&sort%5B%5D*}{&filter%5B%5D*}
+/demo?{&page}{&sort*}{&filter*}
 ```
