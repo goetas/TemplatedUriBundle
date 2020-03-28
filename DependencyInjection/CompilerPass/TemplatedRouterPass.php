@@ -4,6 +4,7 @@ namespace Hautelook\TemplatedUriBundle\DependencyInjection\CompilerPass;
 
 use Symfony\Component\DependencyInjection\Compiler\CompilerPassInterface;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
+use Symfony\Component\HttpKernel\Kernel;
 
 class TemplatedRouterPass implements CompilerPassInterface
 {
@@ -20,6 +21,15 @@ class TemplatedRouterPass implements CompilerPassInterface
         if (isset($resourceOptions['strict_requirements'])) {
             $templatedResourceOptions['strict_requirements'] = $resourceOptions['strict_requirements'];
         }
+        
+        // Symfony 4 and 5 no longer uses those argument thus we add them conditionally for older Symfony versions
+        if (Kernel::MAJOR_VERSION < 5) {
+            $templatedResourceOptions['generator_base_class'] = '%hautelook.router.template.generator.class%';
+            $templatedResourceOptions['generator_cache_class'] = '%kernel.name%%kernel.environment%RF6570UrlGenerator';
+            $templatedResourceOptions['matcher_base_class'] = 'Symfony\Bundle\FrameworkBundle\Routing\RedirectableUrlMatcher';
+            $templatedResourceOptions['matcher_cache_class'] = '%kernel.name%%kernel.environment%RFC6570UrlMatcher';
+        }
+
         $templatedRouter->replaceArgument(2, $templatedResourceOptions);
 
         $ref = new \ReflectionClass($templatedRouter->getClass());

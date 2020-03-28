@@ -19,13 +19,9 @@
                 <argument key="cache_dir">%kernel.cache_dir%</argument>
                 <argument key="debug">%kernel.debug%</argument>
                 <argument key="generator_class">%hautelook.router.template.generator.class%</argument>
-                <argument key="generator_base_class">%hautelook.router.template.generator.class%</argument>
                 <argument key="generator_dumper_class">Symfony\Component\Routing\Generator\Dumper\PhpGeneratorDumper</argument>
-                <argument key="generator_cache_class">%kernel.name%%kernel.environment%RF6570UrlGenerator</argument>
                 <argument key="matcher_class">Symfony\Bundle\FrameworkBundle\Routing\RedirectableUrlMatcher</argument>
-                <argument key="matcher_base_class">Symfony\Bundle\FrameworkBundle\Routing\RedirectableUrlMatcher</argument>
                 <argument key="matcher_dumper_class">Symfony\Component\Routing\Matcher\Dumper\PhpMatcherDumper</argument>
-                <argument key="matcher_cache_class">%kernel.name%%kernel.environment%RFC6570UrlMatcher</argument>
             </argument>
             <argument type="service" id="router.request_context" on-invalid="ignore" />
             <argument type="service" id="parameter_bag" on-invalid="ignore" />
