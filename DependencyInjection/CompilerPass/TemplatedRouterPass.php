@@ -22,8 +22,14 @@ class TemplatedRouterPass implements CompilerPassInterface
             $templatedResourceOptions['strict_requirements'] = $resourceOptions['strict_requirements'];
         }
 
+        $legacyGenerator = !is_a(
+            'Hautelook\TemplatedUriRouter\Routing\Generator\Rfc6570Generator',
+            'Symfony\Component\Routing\Generator\CompiledUrlGenerator',
+            true
+        );
+
         // Symfony 4 and 5 no longer uses those argument thus we add them conditionally for older Symfony versions
-        if (!class_exists('Symfony\Component\Routing\Generator\CompiledUrlGenerator')) {
+        if ($legacyGenerator) {
             $templatedResourceOptions['generator_base_class'] = '%hautelook.router.template.generator.class%';
             $templatedResourceOptions['generator_cache_class'] = '%kernel.name%%kernel.environment%RF6570UrlGenerator';
             $templatedResourceOptions['matcher_base_class'] = 'Symfony\Bundle\FrameworkBundle\Routing\RedirectableUrlMatcher';
@@ -41,3 +47,4 @@ class TemplatedRouterPass implements CompilerPassInterface
         }
     }
 }
+
