@@ -34,6 +34,8 @@ class TemplatedRouterPass implements CompilerPassInterface
             $templatedResourceOptions['generator_cache_class'] = '%kernel.name%%kernel.environment%RF6570UrlGenerator';
             $templatedResourceOptions['matcher_base_class'] = 'Symfony\Bundle\FrameworkBundle\Routing\RedirectableUrlMatcher';
             $templatedResourceOptions['matcher_cache_class'] = '%kernel.name%%kernel.environment%RFC6570UrlMatcher';
+        } else {
+            $templatedResourceOptions['generator_dumper_class'] = 'Symfony\Component\Routing\Generator\Dumper\CompiledUrlGeneratorDumper';
         }
 
         $templatedRouter->replaceArgument(2, $templatedResourceOptions);
