@@ -20,6 +20,7 @@ matrix:
         - php: 7.1
         - php: 7.2
         - php: 7.3
+        - php: 8.0
         - php: 5.4
           env: COMPOSER_FLAGS='--prefer-lowest --prefer-stable'
           dist: precise
@@ -30,6 +31,8 @@ matrix:
           env: SYMFONY_VERSION='^3.0'
         - php: 7.1
           env: SYMFONY_VERSION='^4.0'
+        - php: 8.0.2
+          env: SYMFONY_VERSION='^6.0'
     fast_finish: true
 
 before_script:
